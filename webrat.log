@@ -1,0 +1,6 @@
+# Logfile created on 2010-02-22 18:15:37 -0400 by logger.rb/20321
+REQUESTING PAGE: GET /people/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /people/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /people with {"person[name]"=>"name 1", "commit"=>"Create Person"} and HTTP headers {"HTTP_REFERER"=>"/people/new"}
+REQUESTING PAGE: GET http://www.example.com/people with {} and HTTP headers {}
+REQUESTING PAGE: GET /people/3 with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/people"}

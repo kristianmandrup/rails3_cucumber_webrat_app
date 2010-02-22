@@ -1,0 +1,16 @@
+== Cucumber Rails 3 demo
+
+This is the resulting app from running the steps in the receipe at: http://gist.github.com/311597
+
+There is still a problem with some of the webrat steps. An issue has been raised on the webrat lighthouse:
+
+https://webrat.lighthouseapp.com/projects/10503-webrat/tickets/359-raisl-3-cucumber-integration-problem-certain-web-steps
+
+And in the Webrat google group.
+
+Please help make the "touchdown" getting us the few final yards. Also try creating a similar recipe using Capybara!
+
+Thanks!
+
+Kristian Mandrup and Ted Milker 
+
