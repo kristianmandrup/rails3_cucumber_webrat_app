@@ -1,1 +1,1 @@
-features/manage_people.feature:6:12
+features/manage_people.feature:12

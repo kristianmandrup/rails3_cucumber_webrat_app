@@ -13,6 +13,9 @@ module NavigationHelpers
     when /the new person page/
       new_person_path
 
+    when /the index page/
+      people_path
+
     
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

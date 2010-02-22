@@ -139,7 +139,8 @@ When /^(?:|I )attach the file "([^\"]*)" to "([^\"]*)"$/ do |path, field|
   attach_file(field, path, type)
 end
 
-Then /^(?:|I )should see "([^\"]*)"$/ do |text|
+Then /^(?:|I )should see "([^\"]*)" on (.+)$/ do |text, page_name|
+  visit path_to(page_name) 
   if defined?(Spec::Rails::Matchers)
     response.should contain(text)
   else
@@ -158,7 +159,7 @@ Then /^(?:|I )should see "([^\"]*)" within "([^\"]*)"$/ do |text, selector|
   end
 end
 
-Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
+Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp| 
   regexp = Regexp.new(regexp)
   if defined?(Spec::Rails::Matchers)
     response.should contain(regexp)
@@ -166,6 +167,18 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
     assert_match(regexp, response_body)
   end
 end
+
+# Then /^(?:|I )should see \/([^\/]*) at "([^\"]*)" \/$/ do |regexp, page_name| 
+#   visit path_to(page_name)  
+#   regexp = Regexp.new(regexp)
+#   if defined?(Spec::Rails::Matchers)
+#     response.should contain(regexp)
+#   else
+#     assert_match(regexp, response_body)
+#   end
+# end
+
+
 
 Then /^(?:|I )should see \/([^\/]*)\/ within "([^\"]*)"$/ do |regexp, selector|
   within(selector) do |content|

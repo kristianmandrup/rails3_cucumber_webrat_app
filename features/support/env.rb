@@ -25,7 +25,7 @@ class Cucumber::Rails::World
   include Rack::Test::Methods  
   include Webrat::Methods
   include Webrat::Matchers
-  Spec::Rails::Matchers    
+  # include Spec::Rails::Matchers    
 end                
 
 

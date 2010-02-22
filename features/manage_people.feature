@@ -7,7 +7,7 @@ Feature: Manage people
     Given I am on the new person page
     When I fill in "Name" with "name 1"
     And I press "Create"
-    Then I should see "name 1"
+    Then I should see "name 1" on the index page
 
   Scenario: Delete person
     Given the following people:
