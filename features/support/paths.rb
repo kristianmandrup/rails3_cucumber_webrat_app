@@ -10,10 +10,16 @@ module NavigationHelpers
     
     when /the home\s?page/
       '/'
+    when /the posts page/
+      posts_path
+
+    when /the new post page/
+      new_post_path
+
     when /the new person page/
       new_person_path
 
-    when /the index page/
+    when /the people page/
       people_path
 
     

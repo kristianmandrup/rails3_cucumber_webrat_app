@@ -7,18 +7,19 @@ Feature: Manage people
     Given I am on the new person page
     When I fill in "Name" with "name 1"
     And I press "Create"
-    Then I should see "name 1" on the index page
+    Then I should see "name 1" on the people page
 
-  Scenario: Delete person
-    Given the following people:
-      |name|
-      |name 1|
-      |name 2|
-      |name 3|
-      |name 4|
-    When I delete the 3rd person
-    Then I should see the following people:
-      |Name|
-      |name 1|
-      |name 2|
-      |name 4|
+  # Scenario: Delete person
+  #   Given the following people:
+  #     |name|
+  #     |name 1|
+  #     |name 2|
+  #     |name 3|
+  #     |name 4|
+  #   When I delete the 3rd person
+  #   Then I should be on the index page
+  #   Then I should see the following people:
+  #   | name   |
+  #   | name 1 |
+  #   | name 2 |
+  #   | name 4 |

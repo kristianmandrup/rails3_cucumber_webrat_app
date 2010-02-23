@@ -1,4 +1,6 @@
 CucumberRails3Demo::Application.routes.draw do |map|
+  resources :posts
+
   resources :people
 
   # The priority is based upon order of creation:

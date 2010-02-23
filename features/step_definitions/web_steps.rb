@@ -139,6 +139,15 @@ When /^(?:|I )attach the file "([^\"]*)" to "([^\"]*)"$/ do |path, field|
   attach_file(field, path, type)
 end
 
+Then /^(?:|I )should see "([^\"]*)"$/ do |text|
+  if defined?(Spec::Rails::Matchers)
+    response.should contain(text)
+  else
+    assert_contain text
+  end
+end
+
+
 Then /^(?:|I )should see "([^\"]*)" on (.+)$/ do |text, page_name|
   visit path_to(page_name) 
   if defined?(Spec::Rails::Matchers)
@@ -159,6 +168,20 @@ Then /^(?:|I )should see "([^\"]*)" within "([^\"]*)"$/ do |text, selector|
   end
 end
 
+Then /^(?:|I )should see "([^\"]*)" within "([^\"]*)" on (.+)$/ do |text, selector, page_name| 
+  visit path_to(page_name)   
+  within(selector) do |content|
+    if defined?(Spec::Rails::Matchers)
+      content.should contain(text)
+    else
+      hc = Webrat::Matchers::HasContent.new(text)
+      assert hc.matches?(content), hc.failure_message
+    end
+  end
+end
+
+
+
 Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp| 
   regexp = Regexp.new(regexp)
   if defined?(Spec::Rails::Matchers)
@@ -168,16 +191,15 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   end
 end
 
-# Then /^(?:|I )should see \/([^\/]*) at "([^\"]*)" \/$/ do |regexp, page_name| 
-#   visit path_to(page_name)  
-#   regexp = Regexp.new(regexp)
-#   if defined?(Spec::Rails::Matchers)
-#     response.should contain(regexp)
-#   else
-#     assert_match(regexp, response_body)
-#   end
-# end
-
+Then /^(?:|I )should see \/([^\/]*)\/ on (.+)$/ do |regexp, page_name| 
+  visit path_to(page_name)   
+  regexp = Regexp.new(regexp)
+  if defined?(Spec::Rails::Matchers)
+    response.should contain(regexp)
+  else
+    assert_match(regexp, response_body)
+  end
+end
 
 
 Then /^(?:|I )should see \/([^\/]*)\/ within "([^\"]*)"$/ do |regexp, selector|
@@ -191,6 +213,19 @@ Then /^(?:|I )should see \/([^\/]*)\/ within "([^\"]*)"$/ do |regexp, selector|
   end
 end
 
+Then /^(?:|I )should see \/([^\/]*)\/ within "([^\"]*)" on (.+)$/ do |regexp, selector, page_name| 
+  visit path_to(page_name)     
+  within(selector) do |content|
+    regexp = Regexp.new(regexp)
+    if defined?(Spec::Rails::Matchers)
+      content.should contain(regexp)
+    else
+      assert_match(regexp, content)
+    end
+  end
+end
+
+
 Then /^(?:|I )should not see "([^\"]*)"$/ do |text|
   if defined?(Spec::Rails::Matchers)
     response.should_not contain(text)
@@ -199,7 +234,28 @@ Then /^(?:|I )should not see "([^\"]*)"$/ do |text|
   end
 end
 
+Then /^(?:|I )should not see "([^\"]*)" on (.+)$/ do |text, page_name|  
+  visit path_to(page_name)  
+  if defined?(Spec::Rails::Matchers)
+    response.should_not contain(text)
+  else
+    assert_not_contain(text)
+  end
+end
+
 Then /^(?:|I )should not see "([^\"]*)" within "([^\"]*)"$/ do |text, selector|
+  within(selector) do |content|
+    if defined?(Spec::Rails::Matchers)
+      content.should_not contain(text)
+    else
+      hc = Webrat::Matchers::HasContent.new(text)
+      assert !hc.matches?(content), hc.negative_failure_message
+    end
+  end
+end
+
+Then /^(?:|I )should not see "([^\"]*)" within "([^\"]*)" on (.+)$/ do |text, selector, page_name|
+  visit path_to(page_name)  
   within(selector) do |content|
     if defined?(Spec::Rails::Matchers)
       content.should_not contain(text)
@@ -219,6 +275,16 @@ Then /^(?:|I )should not see \/([^\/]*)\/$/ do |regexp|
   end
 end
 
+Then /^(?:|I )should not see \/([^\/]*)\/ on (.+)$/ do |regexp, page_name|
+  visit path_to(page_name)  
+  regexp = Regexp.new(regexp)
+  if defined?(Spec::Rails::Matchers)
+    response.should_not contain(regexp)
+  else
+    assert_not_contain(regexp)
+  end
+end
+
 Then /^(?:|I )should not see \/([^\/]*)\/ within "([^\"]*)"$/ do |regexp, selector|
   within(selector) do |content|
     regexp = Regexp.new(regexp)
@@ -229,6 +295,19 @@ Then /^(?:|I )should not see \/([^\/]*)\/ within "([^\"]*)"$/ do |regexp, select
     end
   end
 end
+
+Then /^(?:|I )should not see \/([^\/]*)\/ within "([^\"]*)" on (.+)$/ do |regexp, selector, page_name|
+  visit path_to(page_name)
+  within(selector) do |content|
+    regexp = Regexp.new(regexp)
+    if defined?(Spec::Rails::Matchers)
+      content.should_not contain(regexp)
+    else
+      assert_no_match(regexp, content)
+    end
+  end
+end
+
 
 Then /^the "([^\"]*)" field should contain "([^\"]*)"$/ do |field, value|
   if defined?(Spec::Rails::Matchers)
