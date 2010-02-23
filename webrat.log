@@ -64,3 +64,36 @@ REQUESTING PAGE: GET /people with {} and HTTP headers {"HTTP_REFERER"=>"/people"
 REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
 REQUESTING PAGE: POST /posts with {"post[title]"=>"title 1", "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
 REQUESTING PAGE: GET /posts with {} and HTTP headers {"HTTP_REFERER"=>"/posts"}
+REQUESTING PAGE: GET /people/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /people with {"person[name]"=>"name 1", "commit"=>"Create Person"} and HTTP headers {"HTTP_REFERER"=>"/people/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"post[title]"=>"title 1", "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts with {} and HTTP headers {"HTTP_REFERER"=>"/posts"}
+REQUESTING PAGE: GET /people/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /people with {"person[name]"=>"name 1", "commit"=>"Create Person"} and HTTP headers {"HTTP_REFERER"=>"/people/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"post[title]"=>"title 1", "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts with {} and HTTP headers {"HTTP_REFERER"=>"/posts"}
+REQUESTING PAGE: GET /people/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /people with {"person[name]"=>"name 1", "commit"=>"Create Person"} and HTTP headers {"HTTP_REFERER"=>"/people/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"post[title]"=>"title 1", "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts with {} and HTTP headers {"HTTP_REFERER"=>"/posts"}
+REQUESTING PAGE: GET /people/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /people with {"person[name]"=>"name 1", "commit"=>"Create Person"} and HTTP headers {"HTTP_REFERER"=>"/people/new"}
+REQUESTING PAGE: GET /people/latest with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"post[title]"=>"title 1", "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts with {} and HTTP headers {"HTTP_REFERER"=>"/posts"}
+REQUESTING PAGE: GET /people/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /people with {"person[name]"=>"name 1", "commit"=>"Create Person"} and HTTP headers {"HTTP_REFERER"=>"/people/new"}
+REQUESTING PAGE: GET /people/latest with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"post[title]"=>"title 1", "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts with {} and HTTP headers {"HTTP_REFERER"=>"/posts"}
+REQUESTING PAGE: GET /people/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /people with {"person[name]"=>"name 1", "commit"=>"Create Person"} and HTTP headers {"HTTP_REFERER"=>"/people/new"}
+REQUESTING PAGE: GET /people/latest with {} and HTTP headers {"HTTP_REFERER"=>"/people"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"post[title]"=>"title 1", "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts with {} and HTTP headers {"HTTP_REFERER"=>"/posts"}

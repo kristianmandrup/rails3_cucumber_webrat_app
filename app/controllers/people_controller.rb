@@ -10,6 +10,15 @@ class PeopleController < ApplicationController
     end
   end
 
+  def latest
+    @person = Person.order("created_at").last
+
+    respond_to do |format|
+      format.html { render :show }
+      format.xml  { render :xml => @person }
+    end
+  end
+
   # GET /people/1
   # GET /people/1.xml
   def show

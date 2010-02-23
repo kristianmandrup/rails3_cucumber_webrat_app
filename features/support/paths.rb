@@ -22,6 +22,9 @@ module NavigationHelpers
     when /the people page/
       people_path
 
+    when /the latest person page/
+      latest_people_path
+
     
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

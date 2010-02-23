@@ -7,7 +7,7 @@ Feature: Manage people
     Given I am on the new person page
     When I fill in "Name" with "name 1"
     And I press "Create"
-    Then I should see "name 1" on the people page
+    Then I should see "name 1" on the latest person page
 
   # Scenario: Delete person
   #   Given the following people:

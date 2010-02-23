@@ -1,7 +1,11 @@
 CucumberRails3Demo::Application.routes.draw do |map|
   resources :posts
 
-  resources :people
+  resources :people do
+    collection do
+      get :latest
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
